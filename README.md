@@ -1,105 +1,123 @@
 # 🎮 Interactive Door Framework (UE Plugin)
 
-> **A modular Unreal Engine plugin providing a complete, physically interactive door system.**  
-> Designed for **immersive first-person experiences**, architectural visualizations, and games requiring detailed door interactions.  
-> Fully extensible for **third-person projects**.
+> **A fully modular Unreal Engine plugin for creating interactive, physically responsive doors.**  
+> Built for **immersive first-person projects**, easily extendable to third-person and architectural experiences.
 
 ---
 
 ## 🧩 Overview
 
-**Interactive Door Framework (IDF)** is a flexible Unreal Engine plugin that provides a ready-to-use **door interaction system**.  
-It combines physics-based motion, interaction logic, and locking mechanics into a single, customizable framework.
+**Interactive Door Framework (IDF)** provides a complete, ready-to-use **Blueprint framework** for physically interactive doors.  
+It’s designed for creators who want intuitive, realistic door interactions — from subtle pushes to full animation-driven sequences —  
+without coding from scratch.
 
-With IDF you can easily create:
-- Physically interactive doors  
-- Animation-driven or hybrid door systems  
-- Locked doors with key or one-sided unlock logic  
-- Immersive interaction prompts and UI feedback  
+The system integrates:
+- Fully **customizable Blueprint doors** (single or double)
+- **Lock and key** logic with collectible key items
+- **Physical interaction and dragging**
+- **Animation and montage-based behavior**
+- A player **interaction system and prompt UI**
 
 ---
 
-## ✨ Features
+## ✨ Key Features
 
-| Category | Features |
-|-----------|-----------|
-| 🕹 **Interaction System** | - First-person ready interaction component (`IDFPlayerInteractionComponent`)<br>- Detects interactables via sphere trace<br>- Supports interaction start/hold/release<br>- Blueprint-expandable |
-| 🚪 **Door Framework** | - Skeletal or static mesh support<br>- Physics-based motion or animation montage<br>- Supports single and double doors<br>- Customizable handle meshes, sockets, and animation<br>- Configurable door blockers to prevent clipping |
-| 🔒 **Lock System** | - `IDFLockComponent` for per-door locking<br>- Supports: unlocked, one-side lock, and key-based lock states<br>- Integrated with `KeyItemsManager` subsystem<br>- Dynamic unlocking and feedback events |
-| 🗝 **Key Items** | - `IDFKeyActor` for collectible key items<br>- Adds collected keys to `KeyItemsManager`<br>- Keys can be examined and have name/description |
-| 💬 **UI Prompts** | - `IDFInteractionPromptActor` displays context prompts<br>- Easily customizable with your own widgets |
-| ⚙️ **Blueprint Integration** | - Most systems are blueprint-accessible and customizable<br>- Custom materials, meshes, sounds, and montages assignable in the editor |
+### 🚪 **Door Blueprints**
+- Modular **Blueprint doors** ready to use in your project.  
+- Assign your own:
+  - **Frame Mesh**
+  - **Door Mesh**
+  - **Handle Mesh**
+  - **Materials** for each element
+- Editable **handle and lock positions**, automatically adjusting related bones and animations.
+- Supports both **single and double doors**.
+- Comes with **custom skeletal meshes** that drive door, handle, and lock animations dynamically.
+
+---
+
+### 🕹 **Interaction System**
+- Assign `IDFPlayerInteractionComponent` to your player character to enable interactions.  
+- Configure your **interaction input** (press, hold, or double tap).  
+- Supports:
+  - **Tap / Double Tap animations**
+  - **Hold interactions** (for dragging or physically moving doors)
+  - **Unlock animations**
+  - **Physical pushing with collision**
+
+---
+
+### 🔒 **Lock & Key System**
+- Each door has an `IDFLockComponent` that defines its **locking logic**.
+- Supports:
+  - Unlocked doors
+  - One-sided locked doors
+  - Doors requiring **specific key items**
+- Integrated with the `KeyItemsManager` subsystem to track collected keys.
+- Includes ready-to-use **Blueprint Key Items** with placeholder meshes you can easily replace.
+
+---
+
+### 💬 **Interaction Prompts**
+- Includes a `IDFInteractionPromptActor` with a 3D widget to display interaction hints.
+- The prompt visibility is automatically managed by the player’s interaction component.
+- Fully customizable UI and text.
+
+---
+
+### ⚙️ **Blueprint-Driven Customization**
+- All major systems are **Blueprint-based**, ready for designers and level builders:
+  - Door Blueprints (`BP_SingleDoor`, `BP_DoubleDoor`)
+  - Key Item Blueprint (`BP_KeyItem`)
+  - Interaction Prompt Blueprint (`BP_InteractionPrompt`)
+- No C++ setup required — everything works out of the box once the plugin is enabled.
+
+---
+
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ **Install**
+1. Clone or download this repository.  
+2. Place it inside your project’s `Plugins/` folder:
+3. Launch Unreal and enable it in **Edit → Plugins → Installed**.  
+4. Restart the editor.
+
+---
+
+### 2️⃣ **Setup**
+1. Add the **`IDFPlayerInteractionComponent`** to your character.  
+2. Bind your input action for interaction (press / hold / double tap).  
+3. Place one of the provided **Door Blueprints** in your level.  
+4. Assign your meshes and materials directly in the Blueprint.  
+5. Optionally, add **Key Items** to lock/unlock your doors.
+
+That’s it — your doors are now fully interactive and customizable.
 
 ---
 
 ## 🧠 Core Components
 
-| File | Purpose |
-|------|----------|
-| **`IDFDoorActor`** | Main interactive door actor. Handles physical movement, animation montage playback, lock checks, and prompt updates. |
-| **`IDFLockComponent`** | Manages door lock state and logic (unlocked, one-side, key-based). |
-| **`IDFKeyActor`** | Represents collectible key items; integrates with `KeyItemsManager`. |
-| **`KeyItemsManager`** | Global subsystem tracking all collected key items. |
-| **`IDFPlayerInteractionComponent`** | Handles interaction traces and communication with `IIDFInteractable` objects. |
-| **`IDFInteractionPromptActor`** | Displays and hides context-sensitive interaction prompts. |
+| File | Role |
+|------|------|
+| **`IDFDoorActor`** | Base C++ logic for physical and animated door interaction. |
+| **`IDFLockComponent`** | Manages lock state and checks for key items. |
+| **`IDFKeyActor`** | Collectible key actor integrated with the manager. |
+| **`KeyItemsManager`** | Subsystem tracking found key items. |
+| **`IDFPlayerInteractionComponent`** | Detects interactables and handles input. |
+| **`IDFInteractionPromptActor`** | Displays 3D prompts for interaction. |
 
 ---
 
+## 🧪 Interaction Flow
 
----
+Player → InteractionComponent → DoorActor
+│
+├─> LockComponent (checks keys)
+├─> KeyItemsManager (inventory of keys)
+└─> InteractionPrompt (UI feedback)
 
-## 🧰 Requirements
-
-- **Unreal Engine 5.3+**
-- Uses the **Enhanced Input System**
-- Designed for **first-person templates**
-- Fully compatible with **Blueprints and C++**
-
----
-
-## 🚀 Installation
-
-1. Clone or download this repository.
-2. Place the folder inside your project’s `Plugins/` directory:
-
-
-3. Launch Unreal and enable the plugin in **Edit → Plugins → Installed**.
-4. Restart the editor.
-
----
-
-## 🧪 Example Setup
-
-### 🔹 Add a Door
-1. Place an `IDFDoorActor` in your level.  
-2. Assign a Skeletal Mesh and Animation Blueprint.  
-3. Configure the `Lock Component` (key IDs, one-side lock, etc.).  
-4. Optionally assign prompt and interaction montage.
-
-### 🔹 Add a Key Item
-1. Place an `IDFKeyActor` in your level.  
-2. Set its `KeyItemSettings` (ID, mesh, description).  
-
-### 🔹 Enable Interaction
-1. Add `IDFPlayerInteractionComponent` to your player character.  
-2. Bind your input actions to start and end interaction.  
-
----
-
-## 🎨 Customization
-
-- All door and UI materials are **fully replaceable**.  
-- Use your own **meshes, sounds, montages**, and **prompt widgets**.  
-- Extend base classes in **C++ or Blueprint**.
-
----
-
-## 🧩 Example Systems
-
-- Soft push / hard slam interactions  
-- Lock preview gizmos for easy alignment  
-- Sound cues and montage notifies for unlock feedback  
-- Dynamic handle placement via skeletal sockets  
 
 ---
 
