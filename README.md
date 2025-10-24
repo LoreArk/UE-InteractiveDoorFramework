@@ -110,17 +110,6 @@ That’s it — your doors are now fully interactive and customizable.
 
 ---
 
-## 🧪 Interaction Flow
-
-Player → InteractionComponent → DoorActor
-│
-├─> LockComponent (checks keys)
-├─> KeyItemsManager (inventory of keys)
-└─> InteractionPrompt (UI feedback)
-
-
----
-
 ## 🧑‍💻 Author
 
 **Lorenzo Pusateri**  
