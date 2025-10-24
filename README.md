@@ -8,8 +8,7 @@
 ## 🧩 Overview
 
 **Interactive Door Framework (IDF)** provides a complete, ready-to-use **Blueprint framework** for physically interactive doors.  
-It’s designed for creators who want intuitive, realistic door interactions — from subtle pushes to full animation-driven sequences —  
-without coding from scratch.
+It’s designed for creators who want intuitive, realistic door interactions — from subtle pushes to full animation-driven sequences — without coding from scratch.
 
 The system integrates:
 - Fully **customizable Blueprint doors** (single or double)
