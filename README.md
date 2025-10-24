@@ -65,7 +65,7 @@ The system integrates:
 ---
 
 ### ⚙️ **Blueprint-Driven Customization**
-- All major systems are **Blueprint-based**, ready for designers and level builders:
+- All major systems are **Blueprint-customizable**, ready for designers and level builders:
   - Door Blueprints (`BP_SingleDoor`, `BP_DoubleDoor`)
   - Key Item Blueprint (`BP_KeyItem`)
   - Interaction Prompt Blueprint (`BP_InteractionPrompt`)
