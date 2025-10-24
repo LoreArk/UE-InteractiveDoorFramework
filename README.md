@@ -74,19 +74,49 @@ The system integrates:
 ---
 
 
+## 🚀 Installation
+
+### 🟦 For Blueprint-Only Projects
+
+If your project **does not contain any C++ code**, you’ll need to use a **precompiled version** of the plugin.
+
+#### ✅ Option 1 — Download Precompiled Version
+1. Go to the [Releases](https://github.com/LoreArk/UE-InteractiveDoorFramework/releases) page.
+2. Download the latest `.zip` file (e.g. `InteractiveDoorFramework_v1.0_Win64.zip`).
+3. Extract the folder into your project’s `Plugins/` directory:
+4. <YourProject>/Plugins/InteractiveDoorFramework/
+5. Launch Unreal → The plugin will appear under **Edit → Plugins → Installed**.
+6. Restart the editor.
+
+No compilation or Visual Studio setup required.
+
 ---
 
-## 🚀 Getting Started
+#### ⚙️ Option 2 — Compile Once in a C++ Project
+If no precompiled version is available, you can compile the plugin manually:
 
-### 1️⃣ **Install**
-1. Clone or download this repository.  
-2. Place it inside your project’s `Plugins/` folder:
-3. Launch Unreal and enable it in **Edit → Plugins → Installed**.  
-4. Restart the editor.
+1. Create a temporary **C++ project** (Games → Blank → C++).
+2. Copy the plugin into that project’s `Plugins/` folder.
+3. Open the `.uproject` → Unreal will compile the plugin automatically.
+4. Once compiled, copy the **entire plugin folder** (including `Binaries/`) into your Blueprint-only project.
+
+---
+### 🟨 For C++ Projects
+
+If your project already contains C++ code, Unreal will automatically compile the plugin the next time you build your project.
+
+1. **Download and unzip** this repository.  
+2. Copy the content of the extracted folder (the InteractiveDoorFramework folder) into your project’s `Plugins/` directory.
+3. **Right-click** your `.uproject` file → select **"Generate Visual Studio project files"**.  
+4. Open the generated `.sln` and **build the project** (Development Editor, Win64).  
+5. Launch Unreal → go to **Edit → Plugins** and enable the plugin.  
+
+Once compiled, the plugin will appear in your project and be ready to use.
 
 ---
 
-### 2️⃣ **Setup**
+## 🧪 Setup
+
 1. Add the **`IDFPlayerInteractionComponent`** to your character.  
 2. Bind your input action for interaction (press / hold / double tap).  
 3. Place one of the provided **Door Blueprints** in your level.  
@@ -110,15 +140,6 @@ That’s it — your doors are now fully interactive and customizable.
 
 ---
 
-## 🧑‍💻 Author
+## 🧪 Interaction Flow
 
-**Lorenzo Pusateri**  
-🎮 Game Developer & Designer  
-🔗 [GitHub: LoreArk](https://github.com/LoreArk)
 
----
-
-## 📄 License
-
-MIT License — free to use, modify, and include in commercial or personal projects.  
-Attribution appreciated but not required.
