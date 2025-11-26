@@ -1,0 +1,18 @@
+# Unreal plugin build folders
+Binaries/
+Intermediate/
+Saved/
+DerivedDataCache/
+
+# VS and build files
+.vs/
+.vscode/
+*.sln
+*.suo
+*.user
+*.userprefs
+*.opensdf
+*.sdf
+*.suo
+*.xcodeproj
+*.xcworkspace

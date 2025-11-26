@@ -1,0 +1,41 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.InteractiveDoorFramework.cpp.obj": [
+			"IDFCollectibleActor.gen.cpp.obj",
+			"IDFCollectibleStructs.gen.cpp.obj",
+			"IDFDocumentActor.gen.cpp.obj",
+			"IDFDoorActor.gen.cpp.obj",
+			"IDFDoubleDoorActor.gen.cpp.obj",
+			"IDFHUDMessageWidget.gen.cpp.obj",
+			"IDFInteractable.gen.cpp.obj",
+			"IDFInteractableActor.gen.cpp.obj",
+			"IDFInteractionPromptActor.gen.cpp.obj",
+			"IDFItemDescriptionWidget.gen.cpp.obj",
+			"IDFItemUIManager.gen.cpp.obj",
+			"IDFKeyActor.gen.cpp.obj",
+			"IDFLockComponent.gen.cpp.obj",
+			"IDFMovableActor.gen.cpp.obj",
+			"IDFPlayerInteractionComponent.gen.cpp.obj",
+			"InteractiveDoorFramework.init.gen.cpp.obj",
+			"KeyItemsManager.gen.cpp.obj",
+			"IDFCollectableActor.cpp.obj",
+			"IDFDocumentActor.cpp.obj",
+			"IDFKeyActor.cpp.obj",
+			"IDFDoorActor.cpp.obj",
+			"IDFDoubleDoorActor.cpp.obj",
+			"IDFInteractableActor.cpp.obj",
+			"IDFMovableActor.cpp.obj",
+			"IDFLockComponent.cpp.obj",
+			"IDFPlayerInteractionComponent.cpp.obj",
+			"InteractiveDoorFramework.cpp.obj",
+			"IDFInteractable.cpp.obj",
+			"IDFCollectibleStructs.cpp.obj",
+			"KeyItemsManager.cpp.obj",
+			"IDFHUDMessageWidget.cpp.obj",
+			"IDFInteractionPromptActor.cpp.obj",
+			"IDFItemDescriptionWidget.cpp.obj",
+			"IDFItemUIManager.cpp.obj"
+		]
+	}
+}
