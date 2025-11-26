@@ -5,10 +5,28 @@
 
 ---
 
+## 🆕 Update 1.1
+
+### **Navigation Mesh Obstacle Integration**
+- Doors now have a **Nav Modifier Component** that automatically updates based on door state
+- When unlocked/open, the navigation mesh updates to allow AI pathfinding through doors
+
+### **Enhanced Customization**
+- New **Physical Properties** section in door blueprints for fine-tuning door feel:
+  - **MaxAngularVelocity**: Control maximum rotation speed
+  - **MoveAmount**: Input scalar for movement sensitivity
+  
+### **Enhanced UI System**
+- **Message HUD** system that informs players about door states
+- Fully customizable messages and widgets for different door conditions
+- Dynamic feedback for locked doors, missing keys, and interaction hints
+
+---
+
 ## 🧩 Overview
 
 **Interactive Door Framework (IDF)** provides a complete, ready-to-use **Blueprint framework** for physically interactive doors.  
-It’s designed for creators who want intuitive, realistic door interactions — from subtle pushes to full animation-driven sequences — without coding from scratch.
+It's designed for creators who want intuitive, realistic door interactions — from subtle pushes to full animation-driven sequences — without coding from scratch.
 
 The system integrates:
 - Fully **customizable Blueprint doors** (single or double)
@@ -58,7 +76,7 @@ The system integrates:
 
 ### 💬 **Interaction Prompts**
 - Includes a `IDFInteractionPromptActor` with a 3D widget to display interaction hints.
-- The prompt visibility is automatically managed by the player’s interaction component.
+- The prompt visibility is automatically managed by the player's interaction component.
 - Fully customizable UI and text.
 
 ---
@@ -72,20 +90,18 @@ The system integrates:
 
 ---
 
-
 ## 🚀 Installation
 
 ### 🟦 For Blueprint-Only Projects
 
-If your project **does not contain any C++ code**, you’ll need to use a **precompiled version** of the plugin.
+If your project **does not contain any C++ code**, you'll need to use a **precompiled version** of the plugin.
 
 #### ✅ Option 1 — Download Precompiled Version
 1. Go to the [Releases](https://github.com/LoreArk/UE-InteractiveDoorFramework/releases) page.
-2. Download the latest `.zip` file (e.g. `InteractiveDoorFramework_v1.0_Win64.zip`).
-3. Extract the folder into your project’s `Plugins/` directory:
-4. <YourProject>/Plugins/InteractiveDoorFramework/
-5. Launch Unreal → The plugin will appear under **Edit → Plugins → Installed**.
-6. Restart the editor.
+2. Download the latest `.zip` file (e.g. `InteractiveDoorFramework_v1.1_Win64.zip`).
+3. Extract the folder into your project's `Plugins/` directory: /Plugins/InteractiveDoorFramework/
+4. Launch Unreal → The plugin will appear under **Edit → Plugins → Installed**.
+5. Restart the editor.
 
 No compilation or Visual Studio setup required.
 
@@ -95,17 +111,18 @@ No compilation or Visual Studio setup required.
 If no precompiled version is available, you can compile the plugin manually:
 
 1. Create a temporary **C++ project** (Games → Blank → C++).
-2. Copy the plugin into that project’s `Plugins/` folder.
+2. Copy the plugin into that project's `Plugins/` folder.
 3. Open the `.uproject` → Unreal will compile the plugin automatically.
 4. Once compiled, copy the **entire plugin folder** (including `Binaries/`) into your Blueprint-only project.
 
 ---
+
 ### 🟨 For C++ Projects
 
-If your project already contains C++ code, Unreal will automatically compile the plugin the next time you build your project.
+If your project already contains C++ code, Unreal will automatically compile the plugin when you build your project.
 
-1. **Download and unzip** this repository.  
-2. Copy the content of the extracted folder (the InteractiveDoorFramework folder) into your project’s `Plugins/` directory.
+1. **Clone or download** this repository.  
+2. Copy the `InteractiveDoorFramework` folder into your project's `Plugins/` directory: /Plugins/InteractiveDoorFramework/
 3. **Right-click** your `.uproject` file → select **"Generate Visual Studio project files"**.  
 4. Open the generated `.sln` and **build the project** (Development Editor, Win64).  
 5. Launch Unreal → go to **Edit → Plugins** and enable the plugin.  
@@ -122,7 +139,7 @@ Once compiled, the plugin will appear in your project and be ready to use.
 4. Assign your meshes and materials directly in the Blueprint.  
 5. Optionally, add **Key Items** to lock/unlock your doors.
 
-That’s it — your doors are now fully interactive and customizable.
+That's it — your doors are now fully interactive and customizable.
 
 ---
 
