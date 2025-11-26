@@ -139,6 +139,3 @@ That’s it — your doors are now fully interactive and customizable.
 
 ---
 
-## 🧪 Interaction Flow
-
-
